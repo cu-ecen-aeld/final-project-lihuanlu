@@ -1,4 +1,4 @@
-# Overview
+# buildroot-rpi
 
 This repository contains the Buildroot build system for the final project of ECEN 5713 Advanced Embedded Software Design.  
 
