@@ -1,0 +1,5 @@
+
+config BR2_PACKAGE_DEVICE
+	bool "device"
+	help
+	  This package builds and installs the push button, lcd, and sensor drivers.

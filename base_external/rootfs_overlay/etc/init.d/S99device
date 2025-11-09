@@ -1,0 +1,24 @@
+#!/bin/sh
+
+MOD_PATH="/lib/modules/$(uname -r)/extra/"
+
+case "$1" in
+    start)
+	    echo "Load devices"
+        
+        # button
+        insmod "$MOD_PATH"button.ko || exit 1
+        echo "button device loaded"
+		;;
+	stop)
+	    echo "Unload devices"
+		# invoke rmmod with all arguments we got
+		rmmod button || exit 1
+		rm -f /dev/button
+		;;
+	*)
+	    echo "Usage: $0 {start|stop}"
+	exit 1
+esac
+
+exit 0

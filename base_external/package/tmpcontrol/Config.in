@@ -1,0 +1,5 @@
+
+config BR2_PACKAGE_TMPCONTROL
+	bool "tmpcontrol"
+	help
+	  This package builds the user space main program - tmpcontrol.
