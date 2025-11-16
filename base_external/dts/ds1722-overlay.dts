@@ -1,0 +1,34 @@
+// Generated from ChatGPT
+/dts-v1/;
+/plugin/;
+
+/{
+    compatible = "brcm,bcm2711";
+
+    fragment@0 {
+        target = <&spi0>;     // Raspberry Pi 4 SPI bus on GPIO 7/8/9/10/11
+        __overlay__ {
+            status = "okay";
+
+            ds1722: ds1722@0 {
+                compatible = "maxim,ds1722";
+                reg = <0>;             // CE0
+				cs-active-high;
+                spi-max-frequency = <5000000>;
+
+                // SPI mode 1
+                spi-cpha;
+                //spi-cpol;
+            };
+        };
+    };
+
+    fragment@1 {
+        target = <&spi0>;
+        __overlay__ {
+            spidev@0 {
+                status = "disabled";
+            };
+        };
+    };
+};

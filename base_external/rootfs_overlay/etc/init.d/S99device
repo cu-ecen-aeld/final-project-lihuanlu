@@ -5,16 +5,32 @@ MOD_PATH="/lib/modules/$(uname -r)/extra/"
 case "$1" in
     start)
 	    echo "Load devices"
-        
+        #modprobe spidev
+		modprobe spi_bcm2835
+		modprobe ds1722
+        #modprobe i2c-dev
+        modprobe i2c-bcm2835
+		
         # button
         insmod "$MOD_PATH"button.ko || exit 1
         echo "button device loaded"
+		# sensor
+        # insmod "$MOD_PATH"ds1722.ko || exit 1
+        # echo "ds1722 loaded"
 		;;
 	stop)
 	    echo "Unload devices"
 		# invoke rmmod with all arguments we got
 		rmmod button || exit 1
 		rm -f /dev/button
+		#rmmod ds1722 || exit 1
+		#rm -f /dev/ds1722
+		modprobe -r ds1722
+		
+		rmmod spi-bcm2835
+		#rmmod spidev
+		rmmod i2c-bcm2835
+        #rmmod i2c-dev
 		;;
 	*)
 	    echo "Usage: $0 {start|stop}"
