@@ -4,7 +4,7 @@
 #
 ##############################################################
 
-DEVICE_VERSION = 2edcdf039f5b3777002ea9d010d946fbd9dab38d
+DEVICE_VERSION = b49ecaf44ce02ee2908ed68b3b74086b3d7e387d
 DEVICE_SITE = git@github.com:lihuanlu/final-project-devices-lihuanlu.git
 DEVICE_SITE_METHOD = git
 DEVICE_GIT_SUBMODULES = YES

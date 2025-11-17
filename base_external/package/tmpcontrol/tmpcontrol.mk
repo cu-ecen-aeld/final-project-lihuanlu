@@ -4,7 +4,7 @@
 #
 ##############################################################
 
-TMPCONTROL_VERSION = 80f4855943356b460d98832312ebbca739b293c2
+TMPCONTROL_VERSION = ce91c23ab06ab66b8991e810743b97940623fdb8
 TMPCONTROL_SITE = git@github.com:lihuanlu/final-project-devices-lihuanlu.git
 TMPCONTROL_SITE_METHOD = git
 TMPCONTROL_GIT_SUBMODULES = YES
