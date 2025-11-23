@@ -10,6 +10,7 @@ case "$1" in
 		modprobe ds1722
         #modprobe i2c-dev
         modprobe i2c-bcm2835
+		modprobe lcd1602
 		
         # button
         insmod "$MOD_PATH"button.ko || exit 1
@@ -26,6 +27,7 @@ case "$1" in
 		#rmmod ds1722 || exit 1
 		#rm -f /dev/ds1722
 		modprobe -r ds1722
+		modprobe -r lcd1602
 		
 		rmmod spi-bcm2835
 		#rmmod spidev
