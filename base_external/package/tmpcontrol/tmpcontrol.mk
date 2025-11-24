@@ -4,7 +4,7 @@
 #
 ##############################################################
 
-TMPCONTROL_VERSION = 94f873177a65ae442271e73e4f98f150d4183578
+TMPCONTROL_VERSION = 549e67984434ef876bb5ea972b3d2c82e8a592a9
 TMPCONTROL_SITE = git@github.com:lihuanlu/final-project-devices-lihuanlu.git
 TMPCONTROL_SITE_METHOD = git
 TMPCONTROL_GIT_SUBMODULES = YES
@@ -18,7 +18,7 @@ endef
 define TMPCONTROL_INSTALL_TARGET_CMDS
         # Binaries and scripts
         $(INSTALL) -m 0755 $(@D)/tmpcontrol/tmpcontrol $(TARGET_DIR)/usr/bin/
-
+        $(INSTALL) -m 0755 $(@D)/tmpcontrol/tmpcontrol-start-stop $(TARGET_DIR)/etc/init.d/S99tmpcontrol
 endef
 
 $(eval $(generic-package))
