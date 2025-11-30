@@ -41,4 +41,4 @@ dtparam=spi=on
 #enable i2c
 dtparam=i2c_arm=on
 
-dtoverlay=ds1722
+#dtoverlay=ds1722
